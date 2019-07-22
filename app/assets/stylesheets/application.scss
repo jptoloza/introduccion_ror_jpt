@@ -10,6 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+
+// import scss file
+@import "bootswatch/simplex/variables";
+@import "bootstrap";
+@import "bootswatch/simplex/bootswatch";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+body{
+	margin:0 auto;
+	padding: 0;
+	padding-top: 90px;
+}

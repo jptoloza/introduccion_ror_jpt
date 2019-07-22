@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'bootswatch-rails'
+gem 'bootswatch'
 gem 'font-awesome-sass', '~> 5.9.0'
 
 
