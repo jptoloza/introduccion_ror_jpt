@@ -5,7 +5,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbar">
-        <form class="mx-2 my-auto d-inline" style="width:78%">
+        <form class="mx-2 my-auto d-inline" style="width:70%">
             <div class="input-group">
                 <input type="text" class="form-control border border-right-0" placeholder="Search...">
                 <span class="input-group-append">
@@ -20,13 +20,45 @@
 
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item <%= 'active' if params[:controller] == 'home' %>">
+                <a class="nav-link" href="/"><i class="fas fa-home"></i> Inicio</a>
             </li>
             
-            <li class="nav-item">
-                <a class="nav-link d-block" href="#"><i class="fas fa-user-astronaut"></i> Nombre de Usuario</a>
+
+            <% if user_signed_in? %>
+            <li class="nav-item <%= 'active' if params[:controller] == 'pins' %>">
+
+                <%= link_to raw('<i class="fas fa-user-astronaut"></i> ' + current_user.first_name + ' ' + current_user.last_name), pins_path, class: 'nav-link d-block' %>
             </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><%= t('user.edit')%></a>
+                    <a class="dropdown-item" href="#"><%= t('user.password')%></a>
+                    <%= link_to t('devise.sessions.new.sign_out'), destroy_user_session_path, method: 'delete', class: 'dropdown-item' %>
+                </div>
+            </li>
+
+
+            
+
+
+
+            <% else %>
+            <li class="nav-item <%= 'active' if params[:controller] == 'sessions' %>">
+                <%= link_to raw('<i class="fas fa-user-astronaut"></i> Iniciar Sesión'),new_user_session_path, class: 'nav-link d-block'%>
+            </li> 
+
+            <li class="nav-item <%= 'active' if params[:controller] == 'sessions' %>">
+                <%= link_to raw('<i class="far fa-id-card"></i> Registrate'), new_user_registration_path, class: 'nav-link d-block'%>
+            </li> 
+
+
+
+            <% end %>
         </ul>
     </div>
 </nav>

@@ -42,6 +42,10 @@ gem 'bootswatch'
 gem 'font-awesome-sass', '~> 5.9.0'
 gem 'will_paginate', '~> 3.1.0'
 
+
+gem 'devise'
+
+
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg', '>= 0.18', '< 2.0'
