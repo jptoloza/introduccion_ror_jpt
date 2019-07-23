@@ -9,3 +9,5 @@ Este repositorio contiene un desarrollo introductorio a Ruby on Rails. La aplica
 
 * Postgresql: postgres (PostgreSQL) 11.4
 
+
+* update 23/07/2019
