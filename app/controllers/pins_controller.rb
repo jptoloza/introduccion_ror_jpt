@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order(id: :desc)
   end
 
   # GET /pins/1
@@ -25,6 +25,7 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = Pin.new(pin_params)
+    @pin.image.attach(params[:pin][:image])
 
     respond_to do |format|
       if @pin.save
@@ -69,6 +70,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:title, :description, :likes)
+      params.require(:pin).permit(:title, :description, :likes, :image)
     end
 end

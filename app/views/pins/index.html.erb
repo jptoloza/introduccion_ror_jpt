@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Likes</th>
+      <th>id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,14 @@
         <td><%= pin.title %></td>
         <td><%= pin.description %></td>
         <td><%= pin.likes %></td>
+        <td><%= pin.id %></td>
         <td><%= link_to 'Show', pin %></td>
+
+
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

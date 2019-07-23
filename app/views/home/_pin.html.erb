@@ -1,0 +1,11 @@
+
+<div class="card card-deck">
+	<% if pin.image.attached? %>
+ 	<%= image_tag pin.image, class: 'card-img-top' %>
+ 	<% end %>
+ 	<div class="card-body">
+ 		<p class="card-text"><%= pin.title %></p>
+	</div>
+</div>
+
+<div class="clearfix"></div>
