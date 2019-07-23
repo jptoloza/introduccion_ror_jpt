@@ -25,7 +25,7 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = current_user.Pin.new(pin_params)
+    @pin = current_user.Pin.new pin_params
     @pin.image.attach(params[:pin][:image])
 
     respond_to do |format|
