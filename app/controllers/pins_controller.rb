@@ -27,7 +27,8 @@ class PinsController < ApplicationController
   def create
     @pin = Pin.new(pin_params)
     @pin.image.attach(params[:pin][:image])
-
+    @pin.users_id = current_user.id
+    
     respond_to do |format|
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
