@@ -1,3 +1,6 @@
+Rails.application.routes.default_url_options[:host] = "intrororjpt.herokuapp.com"
+
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -66,10 +69,25 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
-  config.action_mailer.default_url_options = { :host => ENV['MAILER_URL'] }
+
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'intrororjpt.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mail.google.com",
+    :user_name => "donruby2019@gmail.com",
+    :password => "ruby.,2019",
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 
   #heroku config:set MAILER_URL=my-awesome-app.herokuapp.com --app my-awesome-app
-  
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
