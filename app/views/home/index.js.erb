@@ -1,8 +1,4 @@
-$('#images').append('<%= j render partial: 'home/pin', collection: @pins %>');
-
-
-
-console.log('<%= @pins.next_page%>')
+$('#pins').append('<%= j render partial: 'home/pin', collection: @pins %>');
 
 <% if @pins.next_page %>
 	$('.pagination').replaceWith('<%= j will_paginate @pins%>');	

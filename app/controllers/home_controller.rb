@@ -2,7 +2,8 @@ class HomeController < ApplicationController
 
 
 	def index
-		@pins = Pin.paginate(page: params[:page], per_page: 4)
+#		sleep(5)
+		@pins = Pin.paginate(page: params[:page], per_page: 8)
 					.order(id: :desc)
 
 	end

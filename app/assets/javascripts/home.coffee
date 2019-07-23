@@ -5,10 +5,10 @@ jQuery ->
 	if $('.pagination').length
 		$(window).scroll -> 
 			url = $('.pagination .next_page').attr('href')
-			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-				$('.pagination').text('buscando...')
-				console.log url
+			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 60
+				$('.pagination').html('<div class="text-center"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>');
 				$.getScript(url)
+
 
 
 
