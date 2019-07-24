@@ -1,0 +1,11 @@
+es:
+    shared:
+        back: 'Volver'        
+        create: 'Crear'
+        view: 'Ver'
+        edit: 'Editar'
+    pins:
+        new:
+            title: 'Nuevo Pin'
+        show:
+            title: 'Ver Pin'

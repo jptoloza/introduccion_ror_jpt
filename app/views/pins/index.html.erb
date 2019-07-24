@@ -1,37 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pins</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Likes</th>
-      <th>id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= pin.title %></td>
-        <td><%= pin.description %></td>
-        <td><%= pin.likes %></td>
-        <td><%= pin.id %></td>
-        <td><%= link_to 'Show', pin %></td>
+<h1 style="display: inline-block;"><%= current_user.first_name.titleize + ' ' + current_user.last_name.titleize %> </h1>
+<div >
+    <%= link_to raw('<i class="fas fa-2x fa-plus-square"></i>'), new_pin_path %> <%= link_to raw('<i class="fas fa-2x fa-pen-square"></i>'), new_pin_path %>
+</div>
+<div class="mb-3">
+    <i><%= @apins.size %> Pin's</i> | <i>10 likes </i>
+</div>
 
 
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
 
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    
+<div class="card-deck" id="pins">
+    <%= render partial: 'pins/pinsindex', collection: @pins, as: :pin %>
+</div>
+<div class="text-center">
+    <%= will_paginate @pins %>
+</div>
 
-<br>
 
-<%= link_to 'New Pin', new_pin_path %>
+
+<%= link_to raw('<div class="addButton"><i class="fas fa-3x fa-plus-circle"></i>
+</i></div>'), new_pin_path %>
+
+
+
+

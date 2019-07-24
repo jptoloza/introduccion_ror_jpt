@@ -1,0 +1,14 @@
+
+<div class="card card-pt">
+	<% if pin.image.attached? %>
+ 	<%= image_tag pin.image, class: 'card-img-top' %>
+ 	<% end %>
+ 	<div class="card-body">
+ 		<p class="card-text"><%= pin.title.first(20) %>...</p>
+	</div>
+	<div class="card-footer">
+		<%= link_to t('shared.view'), pin_path(:id => pin.id), class: 'btn btn-primary pull-left btn-view'%>
+		<%= link_to t('shared.edit'), edit_pin_path(:id => pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>
+	</div>
+</div>
+

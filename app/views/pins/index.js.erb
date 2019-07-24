@@ -1,0 +1,7 @@
+$('#pins').append('<%= j render partial: 'pins/pinsindex', collection: @pins, as: :pin %>');
+
+<% if @pins.next_page %>
+	$('.pagination').replaceWith('<%= j will_paginate @pins%>');	
+<% else %>
+	$('.pagination').remove();
+<% end %>

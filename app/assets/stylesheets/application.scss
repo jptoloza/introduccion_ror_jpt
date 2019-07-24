@@ -126,16 +126,35 @@ img.card-img-top {
 
 
 
+.addButton {
+    font-size:  12px;
+    position:   fixed;
+    width:      39px;
+    height:     39px;
+    right:      20px;
+    bottom:     100px;
+    text-align: center;
+    cursor:     pointer;
+    padding-top: 10px;
+    background: #fff !important;
+    color:      #D9230F !important;
+}
+
+
+.addButton > i:hover {
+    color:      #000 !important;
+}
 
 
 
+.wt-200{
+  max-width: 200px;
+}
 
 
-
-
-
-
-
+.btn-view, .btn-edit {
+  width: 100px
+}
 
 
 

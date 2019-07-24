@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @pin.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
+<%= link_to raw('<i class="fas fa-2x fa-arrow-left"></i>'), pins_path, class: 'btn btn-primary pull-left'%>
 
-<p>
-  <strong>Likes:</strong>
-  <%= @pin.likes %>
-</p>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+
+<div class="row">
+	<div class="offset-4 col-4">
+		<div class="card">
+			<% if @pin.image.attached? %>
+	 		<%= image_tag @pin.image, class: 'card-img-top' %>
+	 		<% end %>
+		 	<div class="card-body">
+		 		<p class="card-text"><%= @pin.title %></p>
+				<hr/>
+		 		<p class="card-text"><%= @pin.description %></p>
+		 		<hr/>
+		 		<p><i><%= @pin.likes %> likes </i></p>
+			</div>
+			<div class="card-footer">
+				<%= link_to t('shared.edit'), edit_pin_path(:id => @pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

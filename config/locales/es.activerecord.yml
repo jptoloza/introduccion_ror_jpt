@@ -1,0 +1,16 @@
+es:
+    activerecord:
+        attributes:
+            pin:
+                id:             'Id'
+                title:          'Título'
+                description:    'Descripción'
+                likes:          'Me gusta'
+                created_at:     'Creado el'
+                updated_at:     'Actualizado el'
+                user_id:        'Id Usuario'
+                image:          'Imagén'
+        models:
+            pin:
+                one: Pin
+                other: Pins

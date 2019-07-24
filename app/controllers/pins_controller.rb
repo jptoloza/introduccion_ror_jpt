@@ -5,7 +5,11 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.all.order(id: :desc)
+    @apins = Pin.where(user_id: current_user.id)
+    @pins = Pin.where(user_id: current_user.id).paginate(page: params[:page], per_page: 8)
+          .order(updated_at: :desc)
+
+#    @pins = Pin.where(user_id: current_user.id).order(updated_at: :desc)
   end
 
   # GET /pins/1
@@ -25,7 +29,8 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = current_user.Pin.new pin_params
+
+    @pin = current_user.pin.new(pin_params)
     @pin.image.attach(params[:pin][:image])
 
     respond_to do |format|

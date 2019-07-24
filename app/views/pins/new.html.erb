@@ -1,5 +1,12 @@
-<h1>New Pin</h1>
+<% if notice?%>
+<p id="notice"><%= notice %></p>
+<% end%>
+
+<h1><%= t('.title') %></h1>
+
+
+<%= link_to raw('<i class="fas fa-angle-double-left"></i> ') + t('shared.back'), pins_path, class: 'btn btn-outline-primary mb-3' %>
+
 
 <%= render 'form', pin: @pin %>
 
-<%= link_to 'Back', pins_path %>
