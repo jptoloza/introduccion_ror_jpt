@@ -16,7 +16,7 @@
 				<hr/>
 		 		<p class="card-text"><%= @pin.description %></p>
 		 		<hr/>
-		 		<p><i><%= @pin.likes %> likes </i></p>
+		 		<p><i><%= @pin.likes.count %> likes </i></p>
 			</div>
 			<div class="card-footer">
 				<%= link_to t('shared.edit'), edit_pin_path(:id => @pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>

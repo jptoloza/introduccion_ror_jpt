@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 	has_one_attached :image
 	has_many :pin, dependent: :destroy
-
+	has_many :likes, dependent: :destroy
 
 
 

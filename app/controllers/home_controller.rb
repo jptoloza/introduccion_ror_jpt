@@ -6,5 +6,8 @@ class HomeController < ApplicationController
 		@pins = Pin.paginate(page: params[:page], per_page: 8)
 					.order(id: :desc)
 
+
+
+
 	end
 end

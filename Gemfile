@@ -44,6 +44,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 
 gem 'devise'
+gem 'image_processing', '~> 1.2'
 
 
 group :production do
