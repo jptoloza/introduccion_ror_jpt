@@ -1,11 +1,8 @@
-<h1>Editing Pin</h1>
+<h1><%= t('.title') %></h1>
+<%= link_to raw('<i class="fas fa-angle-double-left"></i> ') + t('shared.back'), pins_path, class: 'btn btn-outline-primary mb-3' %>
 
 <%= render 'form', pin: @pin %>
 
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
 
 
 
-<%= link_to raw('<div class="addButton"><i class="fas fa-3x fa-plus-circle"></i>
-</i></div>'), new_pin_path %>

@@ -14,3 +14,14 @@ es:
             pin:
                 one: Pin
                 other: Pins
+        helpers:
+            pin:
+                created: 'Pin ha sido creado.'
+                updated: 'Pin ha sido actualizado.'
+                destroyed: 'Pin eliminado.'
+        errors:
+            models:
+                user:
+                    attributes:
+                        current_password:
+                            blank: 'Contraseña no puede estar en blanco.'

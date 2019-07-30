@@ -136,7 +136,7 @@ img.card-img-top {
     text-align: center;
     cursor:     pointer;
     padding-top: 10px;
-    background: #fff !important;
+    background: trasparent !important;
     color:      #D9230F !important;
 }
 
@@ -155,6 +155,27 @@ img.card-img-top {
 .btn-view, .btn-edit {
   width: 100px
 }
+
+.rojo {
+  color: #ff0000;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 576px) { 
+  .addButton {
+    width:      39px;
+    height:     39px;
+    right:      20px;
+    bottom:     20px;
+  }
+}
+
+
 
 
 

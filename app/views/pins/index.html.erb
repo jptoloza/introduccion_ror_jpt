@@ -1,6 +1,7 @@
 <h1 style="display: inline-block;"><%= current_user.first_name.titleize + ' ' + current_user.last_name.titleize %> </h1>
 <div >
-    <%= link_to raw('<i class="fas fa-2x fa-plus-square"></i>'), new_pin_path %> <%= link_to raw('<i class="fas fa-2x fa-pen-square"></i>'), new_pin_path %>
+    <%= link_to raw('<i class="fas fa-2x fa-plus-square"></i>'), new_pin_path %> 
+    <%= link_to raw('<i class="fas fa-2x fa-pen-square"></i>'), edit_user_registration_path %>
 </div>
 <div class="mb-3">
     <i><%= @apins.size %> Pin's</i> | <i>10 likes </i>
@@ -15,12 +16,6 @@
 <div class="text-center">
     <%= will_paginate @pins %>
 </div>
-
-
-
-<%= link_to raw('<div class="addButton"><i class="fas fa-3x fa-plus-circle"></i>
-</i></div>'), new_pin_path %>
-
 
 
 

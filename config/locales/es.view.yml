@@ -1,7 +1,7 @@
 es:
     shared:
         back: 'Volver'        
-        create: 'Crear'
+        create: 'Guardar'
         view: 'Ver'
         edit: 'Editar'
     pins:
@@ -9,3 +9,13 @@ es:
             title: 'Nuevo Pin'
         show:
             title: 'Ver Pin'
+        edit:
+            title: 'Editar Pin'
+
+
+    devise:
+        registrations:
+            title: 'Editar Perfil'
+    users:
+        edit:
+            title: 'Editar Perfil'

@@ -4,11 +4,23 @@
  	<%= image_tag pin.image, class: 'card-img-top' %>
  	<% end %>
  	<div class="card-body">
- 		<p class="card-text"><%= pin.title.first(20) %>...</p>
-	</div>
-	<div class="card-footer">
-		<%= link_to t('shared.view'), pin_path(:id => pin.id), class: 'btn btn-primary pull-left btn-view'%>
-		<%= link_to t('shared.edit'), edit_pin_path(:id => pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>
+ 		<div class="text-right">
+			<span id="likes-<%= pin.id %>"><%= pin.likes.count %></span>
+			<%	pre_like = pin.likes.find { |like| like.user_id == current_user.id} %>
+			<% 	if pre_like %>
+			<i class="fas fa-heart rojo cursor-pointer like" data-icon="fas" data-id="<%= pin.id %>" data-lid="<%= pre_like.id %>"></i>
+			<% 	else %>
+			<i class="far fa-heart rojo cursor-pointer like" data-icon="far" data-id="<%= pin.id %>" data-lid=""></i>
+			<% 	end %>
+		</div>
+		<div>
+			<h4 class="card-title"><%= pin.title %></h4>
+ 		</div>
+		<div class="mt-5">
+			<%= link_to t('shared.view'), pin_path(:id => pin.id), class: 'btn btn-primary pull-left btn-view'%>
+			<%= link_to t('shared.edit'), edit_pin_path(:id => pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>
+		</div>
+
 	</div>
 </div>
 

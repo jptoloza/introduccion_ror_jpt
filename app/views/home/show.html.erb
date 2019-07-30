@@ -1,0 +1,45 @@
+<%= link_to raw('<i class="fas fa-2x fa-arrow-left"></i>'), root_path, class: 'btn btn-primary pull-left'%>
+
+<div class="row">
+	<div class="offset-md-4 col-md-4 col-12">
+		<div class="card">
+			<% if @pin.image.attached? %>
+			 	<%= image_tag @pin.image, class: 'card-img-top' %>
+	 		<% end %>
+		 	<div class="card-body">
+
+			<% if user_signed_in? %>
+				<div class="text-right">
+					<span id="likes-<%= @pin.id %>"><%= @pin.likes.count %></span>
+			<%	pre_like = @pin.likes.find { |like| like.user_id == current_user.id} %>
+			<% 	if pre_like %>
+				<i class="fas fa-heart rojo cursor-pointer like" data-id="<%= @pin.id %>"></i>
+			<% 	else %>
+				<i class="far fa-heart rojo cursor-pointer like" data-id="<%= @pin.id %>"></i>
+			<% 	end %>
+				</div>
+			<% end %>
+				<div >
+			 		<h4 class="card-title"><%= @pin.title %></h4>
+			 	</div>
+			<% if user_signed_in? %>
+				<div class="card-text">
+			 		<%= @pin.description %>
+			 	</div>
+
+				<% if @pin.user.id == current_user.id %>
+			 	<div class="mt-5">
+					<%= link_to t('shared.edit'), edit_pin_path(:id => @pin.id), class: 'btn btn-outline-primary btn-block'%>
+				</div>
+				<% end%>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

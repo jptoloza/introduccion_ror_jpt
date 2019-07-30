@@ -6,23 +6,27 @@ class LikesController < ApplicationController
 	def create
 
 		if already_liked?
-			flash[:notice] = "You can't like more than once"
+			#flash[:notice] = "You can't like more than once"
+			render json: { :status => "success", :code => 304, :message => "likes", :data => {:likes => @pin.likes.count, :id => like.id} }
 		else
-    		@pin.likes.create(user_id: current_user.id)	
+    		like = @pin.likes.create(user_id: current_user.id)	
+			render json: { :status => "success", :code => 200, :message => "likes", :data => {:likes => @pin.likes.count, :id => like.id} }
 		end
-		redirect_to pin_path(@pin)
+#		redirect_to pin_path(@pin)
+#		
 	end
   
 
 	def destroy
 		if !(already_liked?)
 			flash[:notice] = "Cannot unlike"
+			render json: { :status => "success", :code => 304, :message => "likes", :data => {:likes => @pin.likes.count, :id => like.id} }
 		else
 			@like.destroy
 		end
-  		redirect_to pins_path(@pin)
+#  		redirect_to pins_path(@pin)
+		render json: { :status => "success", :code => 200, :message => "likes", :data => {:likes => @pin.likes.count, :id => 0} }
 	end
-
 
 
 	private

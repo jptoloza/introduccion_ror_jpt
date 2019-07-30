@@ -1,9 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 
 <%= link_to raw('<i class="fas fa-2x fa-arrow-left"></i>'), pins_path, class: 'btn btn-primary pull-left'%>
-
-
 
 <div class="row">
 	<div class="offset-4 col-4">
@@ -12,24 +8,36 @@
 	 		<%= image_tag @pin.image, class: 'card-img-top' %>
 	 		<% end %>
 		 	<div class="card-body">
-		 		<p class="card-text"><%= @pin.title %></p>
-				<hr/>
-		 		<p class="card-text"><%= @pin.description %></p>
-		 		<hr/>
-		 		<p><i><%= @pin.likes.count %> likes </i></p>
-			</div>
-			<div class="card-footer">
-				<%= link_to t('shared.edit'), edit_pin_path(:id => @pin.id), class: 'btn btn-outline-primary pull-right btn-edit'%>
-			</div>
+				<div class="text-right">
+					<span id="likes-<%= @pin.id %>"><%= @pin.likes.count %></span>
+					<%	pre_like = @pin.likes.find { |like| like.user_id == current_user.id} %>
+					<% 	if pre_like %>
+					<i class="fas fa-heart rojo cursor-pointer like" data-icon="fas" data-id="<%= @pin.id %>" data-lid="<%= pre_like.id %>"></i>
+					<% 	else %>
+					<i class="far fa-heart rojo cursor-pointer like" data-icon="far" data-id="<%= @pin.id %>" data-lid=""></i>
+					<% 	end %>
+				</div>
+		 		<div>
+					<h4 class="card-title"><%= @pin.title %></h4>
+		 		</div>
+		 		<% if user_signed_in? %>
+		 		<div class="card-text">
+		 			<%= @pin.description %>
+		 		</div>
+		 		<% end %>
+
+
+				<% if @pin.user.id == current_user.id %>
+			 	<div class="mt-5">
+					<%= link_to t('shared.edit'), edit_pin_path(:id => @pin.id), class: 'btn btn-outline-primary btn-block'%>
+				</div>
+				<% end%>
+		 	</div>
 		</div>
 	</div>
 </div>
 
-
-
-<%= link_to raw('<div class="addButton"><i class="fas fa-3x fa-plus-circle"></i>
-</i></div>'), new_pin_path %>
-
+<br/><br/><br/>
 
 
 
