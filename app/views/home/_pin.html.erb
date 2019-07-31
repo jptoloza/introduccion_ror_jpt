@@ -1,6 +1,6 @@
 <div class="card card-pt">
 	<% if pin.image.attached? %>
- 	<%= link_to image_tag(pin.image.variant(resize: "248"), class: 'card-img-top'), show_path(:id => pin.id) %>
+ 	<%= link_to image_tag(pin.image.variant(resize: "100%"), class: 'card-img-top'), show_path(:id => pin.id) %>
  	<% end %>
  	<div class="card-body">
 

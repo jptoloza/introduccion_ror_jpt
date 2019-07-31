@@ -1,7 +1,7 @@
 
-<div class="card card-pt">
+<div class="card card-pt" style="margin-bottom:50px !important">
 	<% if pin.image.attached? %>
- 	<%= image_tag pin.image, class: 'card-img-top' %>
+ 	<%= image_tag pin.image, class: 'card-img-top foto' %>
  	<% end %>
  	<div class="card-body">
  		<div class="text-right">
@@ -17,14 +17,13 @@
 		<div>
 			<h4 class="card-title"><%= pin.title %></h4>
  		</div>
-
-
-		<div class="mt-5 text-center">
+	</div>
+	<div class="card-footer">
+		<div class="text-center">
 			<%= link_to t('shared.view'), pin_path(:id => pin.id), class: 'btn btn-info'%>
 			<%= link_to t('shared.edit'), edit_pin_path(:id => pin.id), class: 'btn btn-warning'%>
 			<%= link_to t('shared.delete'), {controller: "pins", action: "destroy", id: pin}, method: 'delete', data: { confirm: t('shared.confirm') }, class: 'btn btn-primary' %>
 		</div>
-
 	</div>
 </div>
 

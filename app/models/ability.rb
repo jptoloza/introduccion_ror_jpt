@@ -8,7 +8,6 @@ class Ability
     alias_action :create, :read, :update, :destroy, to: :crud
     user ||= User.new
 
-    can :read, Pin
 
     if user.rol==1
         can [:crud], Pin, user_id: user.id

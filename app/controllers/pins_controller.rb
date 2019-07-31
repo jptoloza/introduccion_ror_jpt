@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
     load_and_authorize_resource param_method: :my_sanitizer
+ #   skip_authorize_resource :only => [:index, :show]
     #before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
     # GET /pins
