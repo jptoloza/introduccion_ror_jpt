@@ -1,21 +1,18 @@
 es:
     shared:
-        back: 'Volver'        
-        create: 'Guardar'
-        view: 'Ver'
-        edit: 'Editar'
+        back: "Volver"
+        create: "Guardar"
+        view: "Ver"
+        edit: "Editar"
     pins:
         new:
-            title: 'Nuevo Pin'
+            title: "Nuevo Pin"
         show:
-            title: 'Ver Pin'
+            title: "Ver Pin"
         edit:
-            title: 'Editar Pin'
-
-
-    devise:
-        registrations:
-            title: 'Editar Perfil'
-    users:
-        edit:
-            title: 'Editar Perfil'
+            title: "Editar Pin"
+    user:
+        edit: "Editar Perfil"
+        password: "Cambiar Contraseña"
+        confirmation: "Esperando la confirmación de:"
+        actual: "es necesaria su contraseña actual para confirmar sus cambios"

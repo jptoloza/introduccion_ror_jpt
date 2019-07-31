@@ -2,13 +2,13 @@ en:
     activerecord:
         attributes:
             pin:
-                id:             'Id'
-                title:          'Title'
-                description:    'Description'
-                likes:          'Likes'
-                created_at:     'Created at'
-                updated_at:     'Updated at'
-                user_id:        'User Id'
+                id: "Id"
+                title: "Title"
+                description: "Description"
+                likes: "Likes"
+                created_at: "Created at"
+                updated_at: "Updated at"
+                user_id: "User Id"
         models:
             pin:
                 one: Pin

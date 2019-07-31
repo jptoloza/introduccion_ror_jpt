@@ -46,6 +46,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'devise'
 gem 'image_processing', '~> 1.2'
 
+gem 'trix-rails', require: 'trix'
 gem 'cancancan'
 
 
@@ -56,7 +57,9 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+#  gem 'sqlite3'
+  gem 'pg', '>= 0.18', '< 2.0'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
