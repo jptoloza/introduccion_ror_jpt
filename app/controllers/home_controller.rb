@@ -2,8 +2,19 @@ class HomeController < ApplicationController
 
 
 	def index
-		@pins = Pin.paginate(page: params[:page], per_page: 8)
-					.order(id: :desc)
+		@query = params[:search]
+
+		if @query.present?
+			@pins = Pin
+						.where('title ilike ? OR description ilike ?', "%#{@query}%", "%#{@query}%")
+						.paginate(page: params[:page], per_page: 8)
+						.order(updated_at: :desc)
+		else
+			@pins = Pin.paginate(page: params[:page], per_page: 8)
+					.order(updated_at: :desc)
+		end
+
+
 	end
 
 

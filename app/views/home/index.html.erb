@@ -1,6 +1,9 @@
 
 
-    
+
+
+<% if @query %>
+<%= @query %>
 <div class="card-columns" id="pins">
 	<%= render partial: 'home/pin', collection: @pins %>
 </div>
@@ -8,13 +11,19 @@
 	<%= will_paginate @pins %>
 </div>
 
+<% else %> 
+<div class="card-columns" id="pins">
+	<%= render partial: 'home/pin', collection: @pins %>
+</div>
+<div class="text-center">
+	<%= will_paginate @pins %>
+</div>
+
+<% end %>
 
 
 
 
-
-
-<br/><br/><br/>
 
 
 

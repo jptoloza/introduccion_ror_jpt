@@ -4,6 +4,9 @@ es:
         create: "Guardar"
         view: "Ver"
         edit: "Editar"
+        query: "Buscar"
+        delete: "Eliminar"
+        confirm: "Esta seguro de eliminar el registro?"
     pins:
         new:
             title: "Nuevo Pin"

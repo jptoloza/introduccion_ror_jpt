@@ -26,3 +26,14 @@ es:
                         current_password:
                             blank: "no puede estar en blanco."
                             invalid: "no válida"
+                        email:
+                            blank: 'no puede estar en blanco.'
+                            taken: 'email ya esta registrado'
+                        password:
+                            blank: 'no puede estar en blanco.'
+                        first_name:
+                            blank: 'no puede estar en blanco.'
+                        last_name:
+                            blank: 'no puede estar en blanco.'
+                        username:
+                            blank: 'no puede estar en blanco.'

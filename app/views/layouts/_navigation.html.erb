@@ -5,12 +5,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbar">
-        <form class="mx-2 my-auto d-inline" style="width:70%">
+        <form class="mx-2 my-auto d-inline" style="width:70%" action="<%= root_path %>">
             <div class="input-group">
-                <input type="text" class="form-control border border-right-0" 
-                    placeholder="...">
+                <input type="search" name="search" class="form-control border border-right-0" 
+                placeholder="<%= t('shared.query')%>">
                 <span class="input-group-append">
-                    <button class="btn border border-left-0" type="button">
+                    <button class="btn border border-left-0" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>

@@ -4,6 +4,7 @@ en:
         create: "Create"
         view: "View"
         edit: "Edit"
+        query: "Search"
     pins:
         mew:
             title: "New Pin"

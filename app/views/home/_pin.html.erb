@@ -6,7 +6,7 @@
 
 	<% if user_signed_in? %>
 		<div class="text-right">
-			<%= pin.user.username%>
+			<%= pin.user.username%> | 
 			<span id="likes-<%= pin.id %>"><%= pin.likes.count %></span>
 	<%	pre_like = pin.likes.find { |like| like.user_id == current_user.id} %>
 	<% 	if pre_like %>
